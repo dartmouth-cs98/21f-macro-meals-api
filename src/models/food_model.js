@@ -6,7 +6,7 @@ const FoodSchema = new Schema({
   servingUnit: String,
   calories: Number,
   protein: Number,
-  carbs: Number,
+  carb: Number,
   fat: Number,
 }, {
   toObject: { virtuals: true },
