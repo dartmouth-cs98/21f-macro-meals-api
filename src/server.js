@@ -35,7 +35,7 @@ app.get('/', (req, res) => {
 });
 
 // DB Setup
-const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost/macroserver';
+const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost/macro_db';
 
 mongoose.connect(mongoURI).then(() => {
   console.log('connected to database:', mongoURI);
