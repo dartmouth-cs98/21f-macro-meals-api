@@ -1,17 +1,19 @@
+/* eslint-disable import/no-named-as-default */
+// eslint-disable-next-line import/no-named-as-default-member
 import Food from '../models/food_model';
 
 export const createFood = (req, res) => {
-    const food = new Food();
+  const food = new Food();
 
-    food.name = req.body.name;
-    food.servingSize = req.body.servingSize;
-    food.servingUnit = req.body.servingUnit;
-    food.calories = req.body.calories;
-    food.protein = req.body.protein;
-    food.carbs = req.body.carbs;
-    food.fat = req.body.fat;
+  food.name = req.body.name;
+  food.servingSize = req.body.servingSize;
+  food.servingUnit = req.body.servingUnit;
+  food.calories = req.body.calories;
+  food.protein = req.body.protein;
+  food.carb = req.body.carb;
+  food.fat = req.body.fat;
 
-    food.save()
+  food.save()
     .then((result) => {
       res.json(result);
     })
@@ -53,7 +55,7 @@ export const deleteFood = (req, res) => {
 export const updateFood = (req, res) => {
   const food = req.body;
 
-  Post.findByIdAndUpdate(req.params.id, post, { new: true })
+  Food.findByIdAndUpdate(req.params.id, food, { new: true })
     .then((result) => {
       res.json(result);
     })
