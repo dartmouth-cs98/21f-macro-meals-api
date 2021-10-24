@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import * as Food from './controllers/food_controller';
 import signS3 from './services/s3';
+import classifyFlask from './services/flask';
 
 const router = Router();
 
@@ -15,6 +16,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/sign-s3', signS3);
+router.get('/flask', classifyFlask);
 
 router.route('/food')
   .post(Food.createFood)
