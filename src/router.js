@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import * as Food from './controllers/food_controller';
+import signS3 from './services/s3';
 
 const router = Router();
 
@@ -12,6 +13,8 @@ router.use((req, res, next) => {
 router.get('/', (req, res) => {
   res.json({ message: 'Welcome to Macro API!' });
 });
+
+router.get('/sign-s3', signS3);
 
 router.route('/food')
   .post(Food.createFood)
