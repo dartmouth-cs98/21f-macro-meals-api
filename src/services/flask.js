@@ -1,13 +1,13 @@
 import axios from 'axios';
 
-const classifyFlask = () => {
+const classifyFlask = (req, res) => {
   axios
     .get('https://macroclassifier.herokuapp.com/')
     .then((response) => {
-      return JSON.stringify(response.data);
+      res.send(JSON.stringify(response.data));
     })
     .catch((error) => {
-      return JSON.stringify(error);
+      res.send(error);
     });
 };
 
