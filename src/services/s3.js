@@ -5,7 +5,7 @@ const signS3 = (req, res) => {
     accessKeyId: process.env.AWS_ACCESS_KEY,
     secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
     signatureVersion: 'v4',
-    region: 'us-east-2',
+    region: 'us-east-1',
   });
   const fileName = req.query['file-name'];
   const fileType = req.query['file-type'];
