@@ -12,7 +12,7 @@ dotenv.config({ silent: true });
 const app = express();
 
 // enable/disable cross origin resource sharing if necessary
-app.use(cors());
+app.use(cors({ origin: '*' }));
 
 // enable/disable http request logging
 app.use(morgan('dev'));
@@ -32,11 +32,6 @@ app.use(express.json()); // To parse the incoming requests with JSON payloads
 
 // additional init stuff should go before hitting the routing
 
-// default index route
-app.get('/', (req, res) => {
-  res.send('hi');
-});
-
 // DB Setup
 const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost/macro_db';
 
@@ -44,6 +39,11 @@ mongoose.connect(mongoURI).then(() => {
   console.log('connected to database:', mongoURI);
 }).catch((err) => {
   console.log('error: could not connect to db:', err);
+});
+
+// default index route
+app.get('/', (req, res) => {
+  res.send('hi');
 });
 
 // REGISTER OUR ROUTES -------------------------------
