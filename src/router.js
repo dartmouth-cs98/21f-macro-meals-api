@@ -21,6 +21,7 @@ router.post('/classifyImage', classifyFlask);
 
 router.post('/user/login', User.userLogin);
 router.post('/user/register', User.userRegister);
+router.post('/user/check', User.userCheck);
 
 router.route('/food')
   .post(Food.createFood)

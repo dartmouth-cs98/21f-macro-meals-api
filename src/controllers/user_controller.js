@@ -26,3 +26,13 @@ export const userLogin = (req, res) => {
       res.status(500).json({ error });
     });
 };
+
+export const userCheck = (req, res) => {
+  User.find({ username: req.username })
+    .then((result) => {
+      res.json(result);
+    })
+    .catch((error) => {
+      res.status(500).json({ error });
+    });
+};
