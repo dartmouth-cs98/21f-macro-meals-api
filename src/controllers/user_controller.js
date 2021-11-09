@@ -5,8 +5,8 @@ import User from '../models/user_model';
 export const userRegister = (req, res) => {
   const user = new User();
 
-  user.username = req.username;
-  user.password = req.password;
+  user.username = req.body.username;
+  user.password = req.body.password;
 
   user.save()
     .then((result) => {
