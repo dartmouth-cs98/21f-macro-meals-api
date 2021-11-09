@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import * as Food from './controllers/food_controller';
+import * as User from './controllers/user_controller';
 import signS3 from './services/s3';
 import classifyFlask from './services/flask';
 
@@ -17,6 +18,9 @@ router.get('/', (req, res) => {
 
 router.get('/sign-s3', signS3);
 router.post('/classifyImage', classifyFlask);
+
+router.post('/user/login', User.userLogin);
+router.post('/user/register', User.userRegister);
 
 router.route('/food')
   .post(Food.createFood)
