@@ -18,7 +18,7 @@ export const userRegister = (req, res) => {
 };
 
 export const userLogin = (req, res) => {
-  User.find({ username: req.username })
+  User.find({ username: req.body.username, password: req.body.password }, 'id')
     .then((result) => {
       res.json(result);
     })
@@ -28,7 +28,7 @@ export const userLogin = (req, res) => {
 };
 
 export const userCheck = (req, res) => {
-  User.find({ username: req.username })
+  User.find({ username: req.body.username }, 'id')
     .then((result) => {
       res.json(result);
     })
