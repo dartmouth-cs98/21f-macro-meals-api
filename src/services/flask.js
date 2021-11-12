@@ -5,7 +5,6 @@ const classifyFlask = (req, res) => {
     .post('https://macroclassifier.herokuapp.com/', {
       url: req.data.url,
     })
-    .get('https://macroclassifier.herokuapp.com/')
     .then((response) => {
       res.send(JSON.stringify(response.data));
     })
