@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const classifyFlask = (req, res) => {
   axios
-    .post('https://macroclassifier.herokuapp.com/', {
+    .post('http://127.0.0.1:5000/', {
       url: req.body.url,
     })
     .then((response) => {
