@@ -35,6 +35,16 @@ export const getFoods = (req, res) => {
     });
 };
 
+export const getUserFoods = (req, res) => {
+  Food.find({ username: req.body.username })
+    .then((result) => {
+      res.json(result);
+    })
+    .catch((error) => {
+      res.status(500).json({ error });
+    });
+};
+
 export const getFood = (req, res) => {
   Food.findById(req.params.id)
     .then((result) => {
