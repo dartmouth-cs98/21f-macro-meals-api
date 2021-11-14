@@ -1,9 +1,12 @@
 import mongoose, { Schema } from 'mongoose';
 
 const FoodSchema = new Schema({
-  name: String,
-  servingSize: Number,
-  servingUnit: String,
+  username: String,
+  customName: String,
+  mealTime: String,
+  mood: String,
+  imageUrl: String,
+  classification: String,
   calories: Number,
   protein: Number,
   carb: Number,
