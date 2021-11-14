@@ -23,6 +23,8 @@ router.post('/user/login', User.userLogin);
 router.post('/user/register', User.userRegister);
 router.post('/user/check', User.userCheck);
 
+router.post('/user/history', Food.getUserFoods)
+
 router.route('/food')
   .post(Food.createFood)
   .get(Food.getFoods);
