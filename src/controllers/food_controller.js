@@ -5,9 +5,12 @@ import Food from '../models/food_model';
 export const createFood = (req, res) => {
   const food = new Food();
 
-  food.name = req.body.name;
-  food.servingSize = req.body.servingSize;
-  food.servingUnit = req.body.servingUnit;
+  food.username = req.body.username;
+  food.customName = req.body.customName;
+  food.mealTime = req.body.mealTime;
+  food.mood = req.body.mood;
+  food.imageUrl = req.body.imageUrl;
+  food.classification = req.body.classification;
   food.calories = req.body.calories;
   food.protein = req.body.protein;
   food.carb = req.body.carb;
