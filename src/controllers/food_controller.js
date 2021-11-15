@@ -36,7 +36,7 @@ export const getFoods = (req, res) => {
 };
 
 export const getUserFoods = (req, res) => {
-  Food.find({ username: req.body.username })
+  Food.find({ username: req.body.username }).sort({ createdAt: -1 })
     .then((result) => {
       res.json(result);
     })
