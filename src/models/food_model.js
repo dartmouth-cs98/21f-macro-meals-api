@@ -3,6 +3,7 @@ import mongoose, { Schema } from 'mongoose';
 const FoodSchema = new Schema({
   username: String,
   customName: String,
+  description: String,
   mealTime: String,
   mood: String,
   imageUrl: String,
@@ -11,6 +12,7 @@ const FoodSchema = new Schema({
   protein: Number,
   carb: Number,
   fat: Number,
+  public: Number,
 }, {
   toObject: { virtuals: true },
   toJSON: { virtuals: true },

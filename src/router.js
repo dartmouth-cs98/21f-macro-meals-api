@@ -19,6 +19,8 @@ router.get('/', (req, res) => {
 router.get('/sign-s3', signS3);
 router.post('/classifyImage', classifyFlask);
 
+router.post('/community/food', Food.getCommunityFoods);
+
 router.post('/user/login', User.userLogin);
 router.post('/user/register', User.userRegister);
 router.post('/user/check', User.userCheck);
