@@ -7,6 +7,7 @@ export const createFood = (req, res) => {
 
   food.username = req.body.username;
   food.customName = req.body.customName;
+  food.description = req.body.description;
   food.mealTime = req.body.mealTime;
   food.mood = req.body.mood;
   food.imageUrl = req.body.imageUrl;
@@ -15,6 +16,7 @@ export const createFood = (req, res) => {
   food.protein = req.body.protein;
   food.carb = req.body.carb;
   food.fat = req.body.fat;
+  food.public = req.body.public;
 
   food.save()
     .then((result) => {
@@ -43,6 +45,22 @@ export const getUserFoods = (req, res) => {
     .catch((error) => {
       res.status(500).json({ error });
     });
+};
+
+export const getCommunityFoods = (req, res) => {
+  let obj;
+  Food.find({ public: 1 }).sort({ createdAt: -1 }).limit(25)
+    .then((result) => {
+      obj.recent = result;
+    })
+    .catch((error) => {
+      res.status(500).json({ error });
+    });
+  
+  obj.top = [];
+  obj.favorite = [];
+  
+  res.json(obj);
 };
 
 export const getFood = (req, res) => {
