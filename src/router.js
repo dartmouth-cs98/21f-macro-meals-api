@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import * as Food from './controllers/food_controller';
 import * as User from './controllers/user_controller';
+import * as Fav from './controllers/fav_controller';
 import signS3 from './services/s3';
 import classifyFlask from './services/flask';
 
@@ -24,6 +25,10 @@ router.post('/community/food', Food.getCommunityFoods);
 router.post('/user/login', User.userLogin);
 router.post('/user/register', User.userRegister);
 router.post('/user/check', User.userCheck);
+
+router.post('/fav/new', Fav.newFav);
+router.post('/fav/check', Fav.checkFav);
+router.post('/fav/delete', Fav.deleteFav);
 
 router.post('/user/history', Food.getUserFoods)
 
