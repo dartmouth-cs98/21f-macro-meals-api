@@ -49,13 +49,13 @@ export const getUserFoods = (req, res) => {
 
 export const getCommunityFoods = (req, res) => {
   let obj;
-  Food.find({ public: 1 }).sort({ createdAt: -1 }).limit(25) // recent pull
+  Food.find({ publicFood: 1 }).sort({ createdAt: -1 }).limit(25) // recent pull
     .then((result1) => {
       obj.recent = result1;
-      Food.find({ public: 1 }).sort({ createdAt: -1 }).limit(25) // favorite pull - needs update
+      Food.find({ publicFood: 1 }).sort({ createdAt: -1 }).limit(25) // favorite pull - needs update
         .then((result2) => {
           obj.favorite = result2;
-          Food.find({ public: 1 }).sort({ createdAt: -1 }).limit(25) // top pull - needs update
+          Food.find({ publicFood: 1 }).sort({ createdAt: -1 }).limit(25) // top pull - needs update
             .then((result3) => {
               obj.top = result3;
               res.json(obj);
