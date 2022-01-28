@@ -49,6 +49,7 @@ export const getUserFoods = (req, res) => {
 
 export const getCommunityFoods = (req, res) => {
   let obj;
+  /*
   Food.find({ publicFood: 1 }).sort({ createdAt: -1 }).limit(25) // recent pull
     .then((result1) => {
       obj.recent = result1;
@@ -71,6 +72,14 @@ export const getCommunityFoods = (req, res) => {
     .catch((error) => {
       res.status(500).json({ error });
     });
+  */
+  Food.find({ publicFood: 1 }).sort({ createdAt: -1 }).limit(25)
+  .then((result) => {
+    res.json(result);
+  })
+  .catch((error) => {
+    res.status(500).json({ error });
+  });
 };
 
 export const getFood = (req, res) => {
