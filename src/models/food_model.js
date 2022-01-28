@@ -12,7 +12,7 @@ const FoodSchema = new Schema({
   protein: Number,
   carb: Number,
   fat: Number,
-  public: Number,
+  publicFood: Number,
 }, {
   toObject: { virtuals: true },
   toJSON: { virtuals: true },
