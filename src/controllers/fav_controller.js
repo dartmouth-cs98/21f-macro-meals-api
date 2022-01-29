@@ -18,7 +18,7 @@ export const newFav = (req, res) => {
 };
 
 export const checkFav = (req, res) => {
-  Food.findOne({ username: req.body.username, foodId: req.body.foodId })
+  Fav.findOne({ username: req.body.username, foodId: req.body.foodId })
     .then((result) => {
       res.json(result);
     })
@@ -28,7 +28,7 @@ export const checkFav = (req, res) => {
 };
 
 export const deleteFav = (req, res) => {
-  Food.findOneAndDelete({ username: req.body.username, foodId: req.body.foodId })
+  Fav.findOneAndDelete({ username: req.body.username, foodId: req.body.foodId })
     .then((result) => {
       res.json(result);
     })
