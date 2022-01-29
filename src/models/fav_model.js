@@ -9,6 +9,6 @@ const FavSchema = new Schema({
   timestamps: true,
 });
 
-const FavSchema = mongoose.model('Fav', FavSchema);
+const FavModel = mongoose.model('Fav', FavSchema);
 
-export default FavSchema;
+export default FavModel;
