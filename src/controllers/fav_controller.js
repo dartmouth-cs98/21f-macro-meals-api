@@ -36,3 +36,13 @@ export const deleteFav = (req, res) => {
       res.status(500).json({ error });
     });
 };
+
+export const getUserFav = (req, res) => {
+  Fav.find({ username: req.body.username }).sort({ createdAt: -1 }).limit(25)
+    .then((result) => {
+      res.json(result);
+    })
+    .catch((error) => {
+      res.status(500).json({ error });
+    });
+};
