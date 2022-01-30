@@ -59,7 +59,11 @@ export const getCommunityRecent = (req, res) => {
 };
 
 export const getFoodList = (req, res) => {
-  Fav.find( { _id : { $in : req.body.list } } ).sort({ createdAt: -1 })
+  let idList = [];
+  for (let i = 0; i < req.body.list; i++) {
+    idList.push(ObjectId(req.body.list[i]));
+  }
+  Fav.find( { _id : { $in : idList } } ).sort({ createdAt: -1 })
   .then((result) => {
     res.json(result);
   })
