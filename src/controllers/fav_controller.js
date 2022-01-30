@@ -46,3 +46,16 @@ export const getUserFav = (req, res) => {
       res.status(500).json({ error });
     });
 };
+
+export const getTopFav = (req, res) => {
+  Fav.aggregate([
+      {$group : {_id:"$foodId", count:{$sum:1}}},
+      {$sort: {count:-1}}
+    ]).limit(25)
+    .then((result) => {
+      res.json(result);
+    })
+    .catch((error) => {
+      res.status(500).json({ error });
+    });
+};

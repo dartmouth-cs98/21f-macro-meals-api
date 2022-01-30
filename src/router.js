@@ -21,7 +21,6 @@ router.get('/sign-s3', signS3);
 router.post('/classifyImage', classifyFlask);
 
 router.get('/community/recent', Food.getCommunityRecent);
-router.get('/community/top', Food.getCommunityTop);
 router.post('/community/getFoodList', Food.getFoodList);
 
 router.post('/user/login', User.userLogin);
@@ -31,7 +30,8 @@ router.post('/user/check', User.userCheck);
 router.post('/fav/new', Fav.newFav);
 router.post('/fav/check', Fav.checkFav);
 router.post('/fav/delete', Fav.deleteFav);
-router.post('/fav/user/', Fav.getUserFav);
+router.post('/fav/user', Fav.getUserFav);
+router.get('/fav/top', Fav.getTopFav);
 
 router.post('/user/history', Food.getUserFoods)
 
