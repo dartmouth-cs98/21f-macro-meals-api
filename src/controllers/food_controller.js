@@ -2,6 +2,7 @@
 // eslint-disable-next-line import/no-named-as-default-member
 import Food from '../models/food_model';
 import Fav from '../models/fav_model';
+import mongoose from 'mongoose';
 
 export const createFood = (req, res) => {
   const food = new Food();
@@ -59,7 +60,7 @@ export const getCommunityRecent = (req, res) => {
 };
 
 export const getFoodList = (req, res) => {
-  Fav.find( { _id : { $in : req.body.list.map(function (id) {return ObjectId(id);}) }})
+  Fav.find( { _id : { $in : req.body.list.map(function (id) {return mongoose.Types.ObjectId(id);}) }})
   .then((result) => {
     res.json(result);
   })
