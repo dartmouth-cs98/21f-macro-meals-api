@@ -80,7 +80,7 @@ export const getFood = (req, res) => {
 };
 
 export const deleteFood = (req, res) => {
-  Food.findByIdAndDelete(req.params.id)
+  Food.findByIdAndDelete(req.body.id)
     .then((result) => {
       res.json(result);
     })

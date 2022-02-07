@@ -33,6 +33,8 @@ router.post('/fav/delete', Fav.deleteFav);
 router.post('/fav/user', Fav.getUserFav);
 router.get('/fav/top', Fav.getTopFav);
 
+router.post('/food/delete', Food.deleteFood);
+
 router.post('/user/history', Food.getUserFoods)
 
 router.route('/food')
