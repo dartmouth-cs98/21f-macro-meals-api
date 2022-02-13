@@ -18,6 +18,7 @@ export const createFood = (req, res) => {
   food.carb = req.body.carb;
   food.fat = req.body.fat;
   food.publicFood = req.body.publicFood;
+  food.confidence = req.body.confidence;
 
   food.save()
     .then((result) => {
