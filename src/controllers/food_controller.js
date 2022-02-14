@@ -60,13 +60,24 @@ export const getCommunityRecent = (req, res) => {
 };
 
 export const getFoodList = (req, res) => {
-  Food.find( { _id : { $in : req.body.list.map(function (id) {return mongoose.Types.ObjectId(id);}) }})
-  .then((result) => {
-    res.json(result);
-  })
-  .catch((error) => {
-    res.status(500).json({ error });
-  });
+  if (req.body.publicFood && req.body.publicFood == 1) {
+    Food.find( { publicFood: 1, _id : { $in : req.body.list.map(function (id) {return mongoose.Types.ObjectId(id);}) }})
+    .then((result) => {
+      res.json(result);
+    })
+    .catch((error) => {
+      res.status(500).json({ error });
+    });
+  } else {
+    Food.find( { _id : { $in : req.body.list.map(function (id) {return mongoose.Types.ObjectId(id);}) }})
+    .then((result) => {
+      res.json(result);
+    })
+    .catch((error) => {
+      res.status(500).json({ error });
+    });
+  }
+  
 };
 
 
