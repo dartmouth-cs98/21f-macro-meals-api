@@ -17,8 +17,20 @@ export const createFood = (req, res) => {
   food.protein = req.body.protein;
   food.carb = req.body.carb;
   food.fat = req.body.fat;
-  food.publicFood = req.body.publicFood;
   food.confidence = req.body.confidence;
+  food.classificationTwo = req.body.classificationTwo;
+  food.caloriesTwo = req.body.caloriesTwo;
+  food.proteinTwo = req.body.proteinTwo;
+  food.carbTwo = req.body.carbTwo;
+  food.fatTwo = req.body.fatTwo;
+  food.confidenceTwo = req.body.confidenceTwo;
+  food.classificationThree = req.body.classificationThree;
+  food.caloriesThree = req.body.caloriesThree;
+  food.proteinThree = req.body.proteinThree;
+  food.carbThree = req.body.carbThree;
+  food.fatThree = req.body.fatThree;
+  food.confidenceThree = req.body.confidenceThree;
+  food.publicFood = req.body.publicFood;
 
   food.save()
     .then((result) => {
