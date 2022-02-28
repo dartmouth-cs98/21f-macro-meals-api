@@ -31,6 +31,7 @@ export const createFood = (req, res) => {
   food.fatThree = req.body.fatThree;
   food.confidenceThree = req.body.confidenceThree;
   food.publicFood = req.body.publicFood;
+  food.correctClassification = req.body.correctClassification;
 
   food.save()
     .then((result) => {

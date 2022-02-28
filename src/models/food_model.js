@@ -26,6 +26,7 @@ const FoodSchema = new Schema({
   fatThree: Number,
   confidenceThree: Number,
   publicFood: Number,
+  correctClassification: Number,
 }, {
   toObject: { virtuals: true },
   toJSON: { virtuals: true },
