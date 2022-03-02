@@ -34,6 +34,7 @@ router.post('/fav/user', Fav.getUserFav);
 router.get('/fav/top', Fav.getTopFav);
 
 router.post('/food/delete', Food.deleteFood);
+router.post('/food/updateClassification', Food.updateFoodClassification);
 
 router.post('/user/history', Food.getUserFoods)
 
@@ -43,7 +44,5 @@ router.route('/food')
 
 router.route('/food/:id')
   .get(Food.getFood)
-  .put(Food.updateFood)
-  .delete(Food.deleteFood);
 
 export default router;

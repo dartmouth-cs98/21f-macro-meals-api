@@ -114,10 +114,8 @@ export const deleteFood = (req, res) => {
     });
 };
 
-export const updateFood = (req, res) => {
-  const food = req.body;
-
-  Food.findByIdAndUpdate(req.params.id, food, { new: true })
+export const updateFoodClassification = (req, res) => {
+  Food.findByIdAndUpdate(req.body.id, { correctClassification: req.body.correctClassification })
     .then((result) => {
       res.json(result);
     })
